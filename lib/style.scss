@@ -27,13 +27,21 @@ div ul span {
   margin-left: 15px;
 }
 
+#character-count {
+  font-family: $font;
+   color: $whitish;
+   font-size: 20px;
+   display: inline-block;
+   margin-left: 10px;
+  }
+
 .sortBtn {
   background: $royalBlue;
   color: $whitish;
   font-size: 25px;
   position: absolute;
   right: 30px;
-  top: 33px;
+  top: 23px;
 }
 
 .submitBtn {
@@ -43,7 +51,7 @@ div ul span {
   display: inline-block;
   position: absolute;
   right: 130px;
-  top: 15px;
+  top: 5px;
 }
 
 .clearBtn {
@@ -53,7 +61,7 @@ div ul span {
   display: inline-block;
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 5px;
 }
 
 .title {
@@ -101,6 +109,7 @@ div ul span {
   border: none;
   margin-top: 15px;
   margin-left: 15px;
+  position: relative;
 }
 
 .wrap {
@@ -108,11 +117,6 @@ div ul span {
   position: relative;
   background: $drkBlue;
   height: 70px;
-}
-
-#character-count {
-  font-family: $font;
-  margin: 0;
 }
 
 li {
@@ -132,6 +136,11 @@ button {
   width: 100px;
   border-radius: $radius;
   border: none;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #9b59b6;
 }
 
 input,
