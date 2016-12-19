@@ -3,6 +3,7 @@ import React from 'react'
 import { shallow, mount, render } from 'enzyme'
 import { assert, expect } from 'chai'
 import AddNewMessage  from '../lib/components/AddNewMessage'
+import Application from '../lib/components/Application'
 
 const sinon = require('sinon')
 
@@ -19,14 +20,16 @@ describe('Unit Test | AddNewMessage', () => {
     expect(wrapper.text()).to.contain('Submit')
   })
 })
-// describe('Feature Test | AddNewMessage', () => {
-//   it('submits a message', () => {
-//     const onButtonClick = sinon.spy()
-//     const wrapper = shallow(
-//       <AddNewMessage onClick={onButtonClick} />)
-//     const wrapper2 = shallow(
-//       <MessageInput />)
-//     wrapper.find('.submit-button').simulate('click')
-//     expect(wrapper2.state('draftMessage')).to.eq('')
-//   })
-// })
+
+
+describe('Feature Test | AddNewMessage', () => {
+  it('submits a message', () => {
+    const buttonClick = sinon.spy()
+    const wrapper = shallow(
+      <AddNewMessage onClick={buttonClick} />)
+    const wrapper2 = shallow(
+      <Application />)
+    wrapper.find('.submitBtn').simulate('click')
+    expect(wrapper2.state('draftMessage')).to.eq('')
+  })
+})
