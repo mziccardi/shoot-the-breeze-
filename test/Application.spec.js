@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { shallow, mount, render } from 'enzyme';
-import { assert } from 'chai';
+import { assert, expect } from 'chai';
 
 import Application from '../lib/components/Application';
 const sinon=require('sinon')
@@ -19,14 +19,33 @@ describe('Application', () => {
     const wrapper = mount(<Application />)
     assert.equal(Application.prototype.componentDidMount.calledOnce, true)
   });
-  it('should have clear button with 1 prop', function(){
+  it('should have user state of null',()=>{
+    const wrapper = shallow(<Application />)
+   assert.equal(wrapper.state('user'),(null))
+ })
+  it('should have a filterUser state of null',()=>{
+    const wrapper = shallow(<Application />)
+  assert.equal(wrapper.state('filterUser'),(null))
+})
+  it('should have a filterMessages state of null',()=>{
+    const wrapper = shallow(<Application />)
+    assert.equal(wrapper.state('filterMessages'),(null))
+  })
+
+
+  it('should have clear button', function(){
   const wrapper = render(<Application />)
-  assert.equal(wrapper.find('.clearBtn').length,1)
+  assert.equal(wrapper.find('.clearBtn').to.exist)
   });
   it('should have add new message component with 1 prop', function(){
   const wrapper = render(<Application />)
   assert.equal(wrapper.find('.AddNewMessageBtn').length,1)
   });
+
+
+
+
+
   it('renders xml elements', () => {
   sinon.spy(Application.prototype, 'render')
   const wrapper = mount(<Application />)

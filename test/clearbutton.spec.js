@@ -4,6 +4,7 @@ import { shallow, mount, render } from 'enzyme'
 import { assert, expect } from 'chai'
 
 import  ClearButton  from '../lib/components/ClearButton'
+import Application from '../lib/components/Application'
 
 const sinon = require('sinon')
 
