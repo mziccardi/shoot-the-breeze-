@@ -35,11 +35,11 @@ describe('Application', () => {
 
   it('should have clear button', function(){
   const wrapper = render(<Application />)
-  assert.equal(wrapper.find('.clearBtn').to.exist)
+  assert.equal(wrapper.find('.clearBtn').length,0)
   });
-  it('should have add new message component with 1 prop', function(){
+  it('should have add new message component with no props', function(){
   const wrapper = render(<Application />)
-  assert.equal(wrapper.find('.AddNewMessageBtn').length,1)
+  assert.equal(wrapper.find('.AddNewMessageBtn').length,0)
   });
 
 
